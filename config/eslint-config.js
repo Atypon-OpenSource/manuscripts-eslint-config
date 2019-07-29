@@ -15,6 +15,8 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier', 'react', 'react-hooks', 'header'],
   extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
@@ -25,6 +27,7 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/member-ordering': 1,
     'promise/always-return': 0,
     'react/display-name': 0,
     'react/prop-types': 0,
