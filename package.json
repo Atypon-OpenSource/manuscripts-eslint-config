@@ -1,0 +1,27 @@
+{
+  "name": "@manuscripts/eslint-config",
+  "version": "0.1.0",
+  "description": "Shared ESLint config for Manuscripts projects",
+  "repository": "gitlab:mpapp-public/manuscripts-eslint-config",
+  "license": "Apache-2.0",
+  "main": "config/eslint-config.js",
+  "files": [
+    "config"
+  ],
+  "dependencies": {
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "typescript": "^3.5.3"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">= 1",
+    "eslint-plugin-header": ">= 3",
+    "eslint-plugin-import": ">= 2",
+    "eslint-plugin-prettier": ">= 3",
+    "eslint-plugin-promise": ">= 4",
+    "eslint-plugin-react": ">= 7",
+    "eslint-plugin-react-hooks": ">= 1",
+    "prettier": ">= 1"
+  }
+}
