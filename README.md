@@ -15,7 +15,10 @@ Use the following in a project's `.eslintrc` file (or `eslintConfig` section in 
 
 ```json
 {
-  "extends": "@manuscripts/eslint-config"
+  "extends": "@manuscripts/eslint-config",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
 }
 ```
 
