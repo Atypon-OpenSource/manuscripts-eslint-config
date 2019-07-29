@@ -24,7 +24,7 @@ Use the following in a project's `.eslintrc` file (or `eslintConfig` section in 
 
 ## License header
 
-The `file-header` rule enforces a short Apache 2.0 license header at the start of every file. 
+The `header/header` rule enforces a short Apache 2.0 license header at the start of every file. 
 
 To add the missing file header to all files in a project, run `eslint --project . --fix`
 
