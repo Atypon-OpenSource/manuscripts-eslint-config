@@ -4,7 +4,7 @@ module.exports = () => {
   return [
     '!',
     {
-      pattern: ' * © \\\\d{4} Atypon Systems LLC',
+      pattern: ' * © \\d{4} Atypon Systems LLC',
       template: ` * © ${year} Atypon Systems LLC`,
     },
     ' *',

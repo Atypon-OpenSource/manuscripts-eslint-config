@@ -12,7 +12,7 @@ module.exports = (name) => {
     ' * The Original Developer is the Initial Developer. The Initial Developer of the Original Code is Atypon Systems LLC.',
     ' * ',
     {
-      pattern: ' * © \\\\d{4} Atypon Systems LLC',
+      pattern: ' * © \\d{4} Atypon Systems LLC',
       template: ` * All portions of the code written by Atypon Systems LLC are Copyright (c) ${year} Atypon Systems LLC. All Rights Reserved.`,
     },
   ]
