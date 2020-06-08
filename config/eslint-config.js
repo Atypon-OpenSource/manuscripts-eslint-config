@@ -1,43 +1,56 @@
-const { licenseHeader, licenseMatcher } = require('./file-header')
+const apacheLicense = require('./apache-license')
 
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es6: true,
-  },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: 'module',
+    node: true,
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier', 'react', 'react-hooks', 'header'],
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+      modules: true,
+    },
+  },
+  plugins: [
+    '@typescript-eslint',
+    'header',
+    'import',
+    'jest',
+    'prettier',
+    'promise',
+    'react',
+    'react-hooks',
+    'simple-import-sort',
+  ],
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
-    'plugin:react/recommended',
-    'plugin:promise/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:import/typescript',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended',
+    'plugin:prettier/recommended',
+    'plugin:promise/recommended',
+    'plugin:react/recommended',
+    'prettier/@typescript-eslint',
   ],
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/member-ordering': 1,
-    'promise/always-return': 0,
-    'react/display-name': 0,
-    'react/prop-types': 0,
-    'react-hooks/rules-of-hooks': 'error',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    'header/header': [2, 'block', apacheLicense()],
+    'import/order': 'off',
+    'prettier/prettier': 'warn',
     'react-hooks/exhaustive-deps': 'warn',
-    'header/header': [
-      2,
-      'block',
-      [{ pattern: licenseMatcher, template: licenseHeader }],
-    ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react/display-name': 'off',
+    'react/prop-types': 'off',
+    'simple-import-sort/sort': 'error',
+    'sort-imports': 'off',
   },
   settings: {
     'import/resolver': {
@@ -46,7 +59,7 @@ module.exports = {
       },
     },
     react: {
-      version: '16.8',
+      version: '16.13.1',
     },
   },
   overrides: [

@@ -1,0 +1,12 @@
+stages:
+  - publish
+
+publish:
+  stage: publish
+  only:
+    refs:
+      - master
+  script:
+    - npx @manuscripts/publish
+  tags:
+    - nodejs-8
