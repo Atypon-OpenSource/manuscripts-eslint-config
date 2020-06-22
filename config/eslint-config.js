@@ -42,6 +42,7 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/ban-ts-comment': 'off',
+    curly: 'error',
     'header/header': [2, 'block', apacheLicense()],
     'import/order': 'off',
     'prettier/prettier': 'warn',
