@@ -1,6 +1,6 @@
 {
   "name": "@manuscripts/eslint-config",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Shared ESLint config for Manuscripts projects",
   "repository": "gitlab:mpapp-public/manuscripts-eslint-config",
   "license": "Apache-2.0",
@@ -9,8 +9,8 @@
     "config"
   ],
   "dependencies": {
-    "eslint-config-prettier": "^6.11.0",
     "@typescript-eslint/parser": "^4.1.0",
+    "eslint-config-prettier": "^6.11.0",
     "prettier": "^2.1.1"
   },
   "devDependencies": {
