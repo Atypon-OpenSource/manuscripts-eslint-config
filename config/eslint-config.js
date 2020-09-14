@@ -70,5 +70,12 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 0,
       },
     },
+    {
+      files: ['*.mdx'],
+      extends: 'plugin:mdx/recommended',
+      rules: {
+        'header/header': 0,
+      },
+    },
   ],
 }
