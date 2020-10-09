@@ -7,12 +7,15 @@ Shared ESLint config for Manuscripts projects.
 Use the following command to install ESLint, this shared config and the plugins needed as dev dependencies:
 
 ```sh
-yarn add --dev eslint typescript @typescript-eslint/eslint-plugin \
+yarn add --dev eslint typescript \
+    @typescript-eslint/eslint-plugin @typescript-eslint/parser \
     eslint-plugin-prettier eslint-config-prettier \
     eslint-plugin-import eslint-plugin-simple-import-sort \
     eslint-plugin-react eslint-plugin-react-hooks \
     eslint-plugin-header eslint-plugin-jest  \
     eslint-plugin-promise eslint-plugin-node \
+    eslint-plugin-jsx-a11y \
+    eslint-plugin-mdx \
     @manuscripts/eslint-config
 ```
 
