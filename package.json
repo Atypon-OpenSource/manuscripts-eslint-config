@@ -1,6 +1,6 @@
 {
   "name": "@manuscripts/eslint-config",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Shared ESLint config for Manuscripts projects",
   "repository": "gitlab:mpapp-public/manuscripts-eslint-config",
   "license": "Apache-2.0",
