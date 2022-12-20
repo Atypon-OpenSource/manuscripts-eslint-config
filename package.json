@@ -2,7 +2,7 @@
   "name": "@manuscripts/eslint-config",
   "version": "0.4.2",
   "description": "Shared ESLint config for Manuscripts projects",
-  "repository": "gitlab:mpapp-public/manuscripts-eslint-config",
+  "repository": "github:Atypon-OpenSource/manuscripts-eslint-config",
   "license": "Apache-2.0",
   "main": "config/eslint-config.js",
   "files": [
