@@ -40,7 +40,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:promise/recommended',
     'plugin:react/recommended',
-    'prettier/@typescript-eslint',
   ],
   rules: {
     '@typescript-eslint/ban-ts-comment': 'off',
