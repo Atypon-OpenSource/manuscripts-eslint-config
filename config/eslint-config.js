@@ -52,7 +52,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react/display-name': 'off',
     'react/prop-types': 'off',
-    'simple-import-sort/sort': 'error',
+    'simple-import-sort/imports': 'error',
     'sort-imports': 'off',
   },
   settings: {
