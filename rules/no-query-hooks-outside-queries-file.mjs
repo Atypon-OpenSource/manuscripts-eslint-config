@@ -1,4 +1,4 @@
-const HOOK_NAMES = new Set(['useQuery', 'useMutation', 'useLazyQuery', 'useSubscription'])
+const HOOK_NAMES = new Set(['useQuery', 'useMutation', 'useLazyQuery'])
 
 export default {
   meta: {
