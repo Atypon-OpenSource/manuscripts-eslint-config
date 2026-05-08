@@ -24,6 +24,8 @@
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-diff": "2.1.7",
+    "eslint-plugin-node": "11.1.0",
     "eslint-plugin-simple-import-sort": "13.0.0",
     "globals": "17.5.0",
     "prettier": "3.8.3"

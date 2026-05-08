@@ -12,6 +12,7 @@ import eslintConfigPrettier from 'eslint-config-prettier'
 import promisePlugin from 'eslint-plugin-promise'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import diffPlugin from 'eslint-plugin-diff'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
 import { apacheLicense } from './apache-license.js'
 import noInlineObjectTypesInHooks from '../rules/no-inline-object-types-in-hooks.mjs'
@@ -21,6 +22,7 @@ import noQueryHooksOutsideQueriesFile from '../rules/no-query-hooks-outside-quer
 headerPlugin.rules.header.meta.schema = false
 
 export default [
+  ...diffPlugin.configs['flat/diff'],
   js.configs.recommended,
   ...tsPlugin.configs['flat/recommended'],
   importPlugin.flatConfigs.recommended,
