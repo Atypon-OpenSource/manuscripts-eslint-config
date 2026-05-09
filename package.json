@@ -1,6 +1,6 @@
 {
   "name": "@manuscripts/eslint-config",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "description": "Shared ESLint config for Manuscripts projects",
   "repository": "github:Atypon-OpenSource/manuscripts-eslint-config",
   "license": "Apache-2.0",
