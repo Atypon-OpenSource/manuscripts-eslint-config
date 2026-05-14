@@ -10,6 +10,12 @@
     ".": "./config/eslint-config.js",
     "./config/*": "./config/*"
   },
+  "scripts": {
+    "build": "echo 'No build step'",
+    "typecheck": "echo 'No typecheck'",
+    "test": "echo 'No tests'",
+    "lint": "echo 'No lint'"
+  },
   "files": [
     "config",
     "rules"
