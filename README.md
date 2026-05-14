@@ -7,13 +7,13 @@ Shared ESLint config for Manuscripts projects.
 Use the following command to install ESLint, this shared config and the plugins needed as dev dependencies:
 
 ```sh
-yarn add --dev eslint typescript \
+pnpm add -D eslint typescript \
     @typescript-eslint/eslint-plugin @typescript-eslint/parser \
     eslint-plugin-prettier eslint-config-prettier \
     eslint-plugin-import eslint-plugin-simple-import-sort \
     eslint-plugin-react eslint-plugin-react-hooks \
     eslint-plugin-header eslint-plugin-jest  \
-    eslint-plugin-promise eslint-plugin-node \
+    eslint-plugin-promise \
     eslint-plugin-jsx-a11y \
     eslint-plugin-mdx \
     @manuscripts/eslint-config
@@ -21,15 +21,30 @@ yarn add --dev eslint typescript \
 
 ## Usage
 
-Use the following in a project's `.eslintrc.js` file (or `eslintConfig` section in `package.json`):
+Create an `eslint.config.js` (or `eslint.config.mjs`) in your project root:
 
 ```js
-module.exports = {
-  extends: '@manuscripts/eslint-config',
-  parserOptions: {
-    project: './tsconfig.json',
-  },
-}
+import manuscriptsConfig from '@manuscripts/eslint-config'
+
+export default [
+  ...manuscriptsConfig,
+  // project-specific overrides
+]
+```
+
+## Custom rules
+
+This config ships two local rules:
+
+- **`manuscripts/no-inline-object-types-in-hooks`** — Disallows inline object types as type arguments to `useQuery`, `useMutation`, and `useLazyQuery`. Encourages extracting them to named types/interfaces.
+- **`manuscripts/no-query-hooks-outside-queries-file`** — Enforces that `useQuery`, `useMutation`, and `useLazyQuery` are only called inside files named `queries.ts` or `queries.tsx`.
+
+## Diff-only linting
+
+By default, only changed lines (compared to the current git diff) are linted via `eslint-plugin-diff`. To lint all files regardless of diff status, set the environment variable:
+
+```sh
+ESLINT_ALL_FILES=1 eslint .
 ```
 
 ## License header

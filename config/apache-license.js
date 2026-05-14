@@ -1,4 +1,4 @@
-module.exports = () => {
+export const apacheLicense = () => {
   const year = new Date().getFullYear()
 
   return [
