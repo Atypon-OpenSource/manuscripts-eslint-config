@@ -28,7 +28,7 @@ const diffConfig = process.env.ESLINT_ALL_FILES
 
 export default [
   {
-    ignores: ['dist/**', 'build/**', 'coverage/**', 'node_modules/**'],
+    ignores: ['dist/**', 'build/**', 'coverage/**', 'node_modules/**', '**/versions.ts'],
   },
   ...diffConfig,
   js.configs.recommended,
