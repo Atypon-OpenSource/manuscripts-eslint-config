@@ -36,8 +36,8 @@ export default [
 
 This config ships two local rules:
 
-- **`local/no-inline-object-types-in-hooks`** — Disallows inline object types as type arguments to `useQuery`, `useMutation`, and `useLazyQuery`. Encourages extracting them to named types/interfaces.
-- **`local/no-query-hooks-outside-queries-file`** — Enforces that `useQuery`, `useMutation`, and `useLazyQuery` are only called inside files named `queries.ts` or `queries.tsx`.
+- **`manuscripts/no-inline-object-types-in-hooks`** — Disallows inline object types as type arguments to `useQuery`, `useMutation`, and `useLazyQuery`. Encourages extracting them to named types/interfaces.
+- **`manuscripts/no-query-hooks-outside-queries-file`** — Enforces that `useQuery`, `useMutation`, and `useLazyQuery` are only called inside files named `queries.ts` or `queries.tsx`.
 
 ## Diff-only linting
 

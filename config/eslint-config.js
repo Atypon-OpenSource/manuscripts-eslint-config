@@ -56,7 +56,7 @@ export default [
     plugins: {
       header: fixupPluginRules(headerPlugin),
       prettier: prettierPlugin,
-      local: {
+      manuscripts: {
         rules: {
           'no-inline-object-types-in-hooks': noInlineObjectTypesInHooks,
           'no-query-hooks-outside-queries-file': noQueryHooksOutsideQueriesFile,
@@ -67,8 +67,8 @@ export default [
     },
     rules: {
       '@typescript-eslint/ban-ts-comment': ['error', { minimumDescriptionLength: 3 }],
-      'local/no-inline-object-types-in-hooks': 'error',
-      'local/no-query-hooks-outside-queries-file': 'error',
+      'manuscripts/no-inline-object-types-in-hooks': 'error',
+      'manuscripts/no-query-hooks-outside-queries-file': 'error',
       curly: 'error',
       'header/header': [2, 'block', apacheLicense()],
       'import/order': 'off',
