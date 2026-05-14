@@ -1,4 +1,4 @@
-export const cpalLicense = (name) => {
+export default function cpalLicense(name) {
   const year = new Date().getFullYear()
 
   return [

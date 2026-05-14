@@ -1,3 +1,4 @@
+import { fixupConfigRules, fixupPluginRules } from '@eslint/compat'
 import js from '@eslint/js'
 import globals from 'globals'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
@@ -21,8 +22,15 @@ import noQueryHooksOutsideQueriesFile from '../rules/no-query-hooks-outside-quer
 // eslint-plugin-header has a malformed schema that fails ESLint 9+ strict schema validation
 headerPlugin.rules.header.meta.schema = false
 
+const diffConfig = process.env.ESLINT_ALL_FILES
+  ? []
+  : diffPlugin.configs['flat/diff']
+
 export default [
-  ...diffPlugin.configs['flat/diff'],
+  {
+    ignores: ['dist/**', 'build/**', 'coverage/**', 'node_modules/**'],
+  },
+  ...diffConfig,
   js.configs.recommended,
   ...tsPlugin.configs['flat/recommended'],
   importPlugin.flatConfigs.recommended,
@@ -31,23 +39,22 @@ export default [
   jsxA11yPlugin.flatConfigs.recommended,
   eslintConfigPrettier,
   promisePlugin.configs['flat/recommended'],
-  reactPlugin.configs.flat.recommended,
+  ...fixupConfigRules([reactPlugin.configs.flat.recommended]),
   {
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        ecmaVersion: 2020,
+        ecmaVersion: 2021,
         sourceType: 'module',
         ecmaFeatures: { jsx: true },
       },
       globals: {
         ...globals.browser,
         ...globals.es2021,
-        ...globals.node,
       },
     },
     plugins: {
-      header: headerPlugin,
+      header: fixupPluginRules(headerPlugin),
       prettier: prettierPlugin,
       local: {
         rules: {
@@ -59,13 +66,13 @@ export default [
       'simple-import-sort': simpleImportSortPlugin,
     },
     rules: {
-      '@typescript-eslint/ban-ts-comment': 'off',
+      '@typescript-eslint/ban-ts-comment': ['error', { minimumDescriptionLength: 3 }],
       'local/no-inline-object-types-in-hooks': 'error',
       'local/no-query-hooks-outside-queries-file': 'error',
       curly: 'error',
       'header/header': [2, 'block', apacheLicense()],
       'import/order': 'off',
-      'prettier/prettier': 'warn',
+      'prettier/prettier': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       'react-hooks/rules-of-hooks': 'error',
       'react/display-name': 'off',
@@ -82,6 +89,12 @@ export default [
       react: {
         version: 'detect',
       },
+    },
+  },
+  {
+    files: ['**/*.config.{js,ts,mjs,cjs}', 'scripts/**/*.{js,ts,mjs}'],
+    languageOptions: {
+      globals: globals.node,
     },
   },
   {

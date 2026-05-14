@@ -3,13 +3,18 @@ const HOOK_NAMES = new Set(['useQuery', 'useMutation', 'useLazyQuery'])
 export default {
   meta: {
     type: 'suggestion',
+    docs: {
+      description:
+        'Enforce that useQuery/useMutation/useLazyQuery are only used inside queries.ts files.',
+    },
+    schema: [],
     messages: {
       noHookOutsideQueriesFile:
         "'{{hook}}' must only be used inside a queries.ts file. Wrap it in a custom hook there instead.",
     },
   },
   create(context) {
-    const filename = context.filename ?? context.getFilename()
+    const filename = context.filename
     if (/queries\.(ts|tsx)$/.test(filename)) return {}
 
     return {

@@ -3,6 +3,11 @@ const HOOK_NAMES = new Set(['useQuery', 'useMutation', 'useLazyQuery'])
 export default {
   meta: {
     type: 'suggestion',
+    docs: {
+      description:
+        'Disallow inline object types in useQuery/useMutation/useLazyQuery type arguments.',
+    },
+    schema: [],
     messages: {
       noInlineObjectType:
         "Avoid inline object types in {{hook}} type arguments. Extract '{{type}}' to a named type or interface.",
