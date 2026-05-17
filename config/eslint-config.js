@@ -5,7 +5,6 @@ import tsPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import headerPlugin from 'eslint-plugin-header'
 import importPlugin from 'eslint-plugin-import'
-import jestPlugin from 'eslint-plugin-jest'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import * as mdxPlugin from 'eslint-plugin-mdx'
 import prettierPlugin from 'eslint-plugin-prettier'
@@ -35,7 +34,6 @@ export default [
   ...tsPlugin.configs['flat/recommended'],
   importPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.typescript,
-  jestPlugin.configs['flat/recommended'],
   jsxA11yPlugin.flatConfigs.recommended,
   eslintConfigPrettier,
   promisePlugin.configs['flat/recommended'],
